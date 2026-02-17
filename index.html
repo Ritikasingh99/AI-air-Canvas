@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Air Canvas</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+</head>
+
+<body>
+     <div class="app-title">AI Air <br>Canvas</div>
+  <!-- Toolbar -->
+  <div class="toolbar">
+    
+    <!-- Colors (table) -->
+    <div id="colors" class="colors">
+      <div class="colors-label">Colors</div>
+      <table class="color-table" role="grid" aria-label="Color swatches">
+        <tr>
+          <td><div class="color" data-color="#00ffff" style="background:#00ffff;" title="Cyan"></div></td>
+          <td><div class="color" data-color="#ff69b4" style="background:#ff69b4;" title="Pink"></div></td>
+          <td><div class="color" data-color="#800080" style="background:#800080;" title="Purple"></div></td>
+          <td><div class="color" data-color="#ff0000" style="background:#ff0000;" title="Red"></div></td>
+          <td><div class="color" data-color="#00ff00" style="background:#00ff00;" title="Green"></div></td>
+        </tr>
+        <tr>
+          <td><div class="color" data-color="#006400" style="background:#006400;" title="Dark Green"></div></td>
+          <td><div class="color" data-color="#8B4513" style="background:#8B4513;" title="Brown"></div></td>
+          <td><div class="color" data-color="#ffff00" style="background:#ffff00;" title="Yellow"></div></td>
+          <td><div class="color" data-color="#ffffff" style="background:#ffffff;" title="White"></div></td>
+          <td><div class="color" data-color="#000000" style="background:#000000;" title="Black"></div></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Shape tools (table form) -->
+    <div id="shapes" class="shapes">
+      <div class="shapes-label">Shapes</div>
+      <table class="shape-table" role="grid" aria-label="Shape options">
+        <tr>
+          <td><button class="shape-btn active" data-shape="free" title="Freehand">Brush</button></td>
+          <td><button class="shape-btn" data-shape="line" title="Line">Line</button></td>
+        </tr>
+        
+        <tr>
+          <td><button class="shape-btn" data-shape="circle" title="Circle">Circle</button></td>
+          <td><button class="shape-btn" data-shape="square" title="Square">Square</button></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Brush size -->
+    <input type="range" id="brushSize" min="1" max="30" value="5">
+
+    <!-- Eraser size (visual indicator only) -->
+    <div id="eraserIndicator" class="eraser-indicator" title="Eraser size"></div>
+
+    <!-- Eraser -->
+    <button id="eraserBtn">Eraser</button>
+  </div>
+
+  <video id="video" autoplay playsinline></video>
+  <canvas id="canvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
